@@ -58,7 +58,11 @@ else:
             tabela_html = "<p><i>Nenhuma tarefa.</i></p>"
         else:
             tabela_html = df.to_html(index=False).replace(
-                "<table", f"<table style='width:100%; border-collapse: collapse;'"
+                "<table", f"<table style='width:100%; border-collapse: collapse; color:black;'"
+            ).replace(
+                "<th>", "<th style='border:1px solid black; color:black;'>"
+            ).replace(
+                "<td>", "<td style='border:1px solid black; color:black;'>"
             )
 
         st.markdown(
@@ -79,16 +83,16 @@ else:
 
 
     with col1:
-        bloco_colorido("Fazer agora", fazer_agora, "#ffb3b3")  
+        bloco_colorido("Fazer agora", fazer_agora, "#e43636")  
         
     with col2:
-        bloco_colorido("Delegar", delegar, "#ffe8a3")  
+        bloco_colorido("Delegar", delegar, "#ffd041")  
         
     with col3:
-        bloco_colorido("Planejar", planejar, "#bff5bf")  
+        bloco_colorido("Planejar", planejar, "#5eff5e")  
         
     with col4:
-        bloco_colorido("Eliminar", eliminar, "#e6e6e6")  
+        bloco_colorido("Eliminar", eliminar, "#f8f8f8")  
         
 
 if not st.session_state.tarefas.empty:
